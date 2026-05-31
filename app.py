@@ -22,8 +22,9 @@ base_url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/se
 @app.route("/weather", methods=["GET"])
 @limiter.limit("50 per hour")
 def weather():
-    location = request.args.get("location")
+    location = request.args.get("location").strip()
     location = quote(location)
+    # Use a strptime and strftime to rearrange the date as necessary. Maybe change it to being something slightly different like using day, month and year instead to form the date fields. this would make it easier for the user to enter dates into the url and prevent input errors
     date_from = request.args.get("datefrom")
     date_to = request.args.get("dateto")
 
