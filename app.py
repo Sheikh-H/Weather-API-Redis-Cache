@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import requests
 import os
 import jsonify
+import redis
 
 load_dotenv()
 
@@ -18,7 +19,20 @@ base_url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/se
 
 @app.route("/weather", methods=["GET"])
 def weather():
-    pass
+    location = request.args.get("location")
+    date_from = request.args.get("date_from")
+    date_to = request.args.get("date_to")
+
+    if location and date_from and date_to:
+        url = f"{base_url}{location}/{date_from}/{date_to}?unitGroup=uk&key={API_KEY}&contentType=json"
+    elif location and date_from:
+        url = f"{base_url}{location}/{date_from}?unitGroup=uk&key={API_KEY}&contentType=json"
+    elif location:
+        url = f"{base_url}{location}/?unitGroup=uk&key={API_KEY}&contentType=json"
+
+    response = requests.get(url)
+    data = response.json()
+    return data
 
 
 if __name__ == "__main__":
