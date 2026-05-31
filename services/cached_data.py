@@ -1,6 +1,7 @@
 import redis
 import requests
 import json
+import jsonify
 import os
 from dotenv import load_dotenv
 
@@ -20,23 +21,26 @@ def get_data(url):
     if data == False:
         get_data_from_api(url)
     else:
-        return json.loads(data)
+        return jsonify(data)
 
 
 def get_data_from_redis(url):
     data = redis_client.get(url)
     if data:
-        return json.loads(data)
+        return jsonify(data)
     else:
         data = get_data_from_api(url)
-        return json.loads(data)
+        return jsonify(data)
 
 
 def get_data_from_api(url):
-    response = requests.get(url)
-    data = response.json()
-    store_data_in_redis(url, json.dumps(data, indent=2), TIME)
-    return json.loads(data)
+    try:
+        response = requests.get(url)
+        data = response.json()
+        store_data_in_redis(url, json.dumps(data, indent=2), TIME)
+    except Exception as e:
+        print(e)
+    return jsonify(data)
 
 
 def store_data_in_redis(key, value, expiration):

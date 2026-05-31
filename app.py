@@ -5,7 +5,7 @@ import requests
 import os
 import jsonify
 import redis
-from services import cached_data
+from services.cached_data import get_data
 
 load_dotenv()
 
@@ -26,15 +26,13 @@ def weather():
 
     if location and date_from and date_to:
         url = f"{base_url}{location}/{date_from}/{date_to}?unitGroup=uk&key={API_KEY}&contentType=json"
-        
+        get_data(url)
     elif location and date_from:
         url = f"{base_url}{location}/{date_from}?unitGroup=uk&key={API_KEY}&contentType=json"
+        get_data(url)
     elif location:
         url = f"{base_url}{location}/?unitGroup=uk&key={API_KEY}&contentType=json"
-
-    response = requests.get(url)
-    data = response.json()
-    return data
+        get_data(url)
 
 
 if __name__ == "__main__":
