@@ -382,14 +382,14 @@ SOFTWARE.
     <img src="https://img.shields.io/badge/Gmail-376e00?style=flat&logo=gmail&logoColor=white" alt="Gmail">
   </a>
 
-  <a class="header-badge" target="_blank" href="https://sheikh-h.github.io/">
+  <a class="header-badge" target="_blank" href="https://sheikh-hussain.onrender.com/">
     <img src="https://img.shields.io/badge/Portfolio-376e00?style=flat&logo=github&logoColor=white" alt="Portfolio">
   </a>
 
 </div>
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/sheikh-hussain/" target="_blank">By Sheikh Hussain 💚</a>
+  <a href="https://sheikh-hussain.onrender.com/" target="_blank">By Sheikh Hussain 💚</a>
 </div>
 
 ---
