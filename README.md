@@ -1,4 +1,4 @@
-# 🌦️ WeatherFlow: Cached Weather API Service
+# 🌦️ Cached Weather API Service
 
 <p align="center">
   <b>A lightweight, high-performance weather API wrapper built with Flask, Redis caching, and rate limiting.</b><br>
