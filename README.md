@@ -9,7 +9,7 @@
 
 ## 📘 Project Overview
 
-**WeatherFlow** is a Flask-based backend service that retrieves real-time weather data from the **Visual Crossing Weather API** and improves performance using **Redis caching** alongside **Flask-Limiter-based rate limiting**.
+**Weather API Redis Cache** is a Flask-based backend service that retrieves real-time weather data from the **Visual Crossing Weather API** and improves performance using **Redis caching** alongside **Flask-Limiter-based rate limiting**.
 
 This project was developed as part of the roadmap.sh backend learning pathway:
 
@@ -108,8 +108,8 @@ This project uses the free Visual Crossing Weather API.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/alinakitieva/weather_api.git
-cd weather_api
+git clone https://github.com/Sheikh-H/Weather-API-Redis-Cache.git
+cd Weather-API-Redis-Cache
 ```
 
 ### 2. Create a virtual environment
@@ -270,7 +270,7 @@ The final JSON response is returned to the client.
 Main controller function:
 
 * Checks Redis cache first
-* Falls back to API if no cached data exists
+* Falls back to the API if no cached data exists
 * Returns the final response
 
 ---
@@ -284,16 +284,16 @@ Main controller function:
 
 ### `get_data_from_api(url)`
 
-* Sends request to Visual Crossing API
-* Parses JSON response
-* Stores result in Redis cache
+* Sends a request to the Visual Crossing API
+* Parses the JSON response
+* Stores the result in the Redis cache
 * Returns fresh data
 
 ---
 
 ### `store_data_in_redis(key, value, expiration)`
 
-* Stores API response in Redis
+* Stores the API response in Redis
 * Applies a TTL of 12 hours
 
 ---
@@ -312,8 +312,8 @@ This helps prevent abuse and protects external API usage limits.
 
 ## 📂 Project Structure
 
-```
-weather_api/
+```text
+Weather-API-Redis-Cache/
 │
 ├── app.py
 ├── services/
@@ -327,10 +327,10 @@ weather_api/
 
 ## ⚠️ Notes for Beginners
 
-* Ensure Redis is running before starting the application
-* Never expose your API key publicly
-* Caching significantly reduces external API calls and improves performance
-* Rate limiting protects against excessive usage
+* Ensure Redis is running before starting the application.
+* Never expose your API key publicly.
+* Caching significantly reduces external API calls and improves performance.
+* Rate limiting protects against excessive usage.
 
 ---
 
@@ -338,7 +338,7 @@ weather_api/
 
 This project is licensed under the **MIT Licence** — see the LICENCE file for details.
 
-```
+```text
 MIT Licence
 
 Copyright (c) 2026 Sheikh Hussain
@@ -368,28 +368,28 @@ SOFTWARE.
 
 <div align="center" style="border: 1px solid green; padding: 10px; border-radius: 5px;">
 
-  <p>🗣️ Feel free to follow, connect, and chat!</p>
+<p>🗣️ Feel free to follow, connect, and chat!</p>
 
-  <a class="header-badge" target="_blank" href="https://github.com/Sheikh-H">
-    <img src="https://img.shields.io/badge/GitHub-376e00?style=flat&logo=github&logoColor=white" alt="GitHub">
-  </a>
+<a class="header-badge" target="_blank" href="https://github.com/Sheikh-H">
+<img src="https://img.shields.io/badge/GitHub-376e00?style=flat&logo=github&logoColor=white" alt="GitHub">
+</a>
 
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/sheikh-hussain/">
-    <img src="https://img.shields.io/badge/LinkedIn-376e00?style=flat&logo=LinkedIn&logoColor=white" alt="LinkedIn">
-  </a>
+<a class="header-badge" target="_blank" href="https://www.linkedin.com/in/sheikh-hussain/">
+<img src="https://img.shields.io/badge/LinkedIn-376e00?style=flat&logo=LinkedIn&logoColor=white" alt="LinkedIn">
+</a>
 
-  <a class="header-badge" target="_blank" href="mailto:sheikh.hussain1155@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-376e00?style=flat&logo=gmail&logoColor=white" alt="Gmail">
-  </a>
+<a class="header-badge" target="_blank" href="mailto:sheikh.hussain1155@gmail.com">
+<img src="https://img.shields.io/badge/Gmail-376e00?style=flat&logo=gmail&logoColor=white" alt="Gmail">
+</a>
 
-  <a class="header-badge" target="_blank" href="https://sheikh-hussain.onrender.com/">
-    <img src="https://img.shields.io/badge/Portfolio-376e00?style=flat&logo=github&logoColor=white" alt="Portfolio">
-  </a>
+<a class="header-badge" target="_blank" href="https://sheikh-hussain.onrender.com/">
+<img src="https://img.shields.io/badge/Portfolio-376e00?style=flat&logo=github&logoColor=white" alt="Portfolio">
+</a>
 
 </div>
 
 <div align="center">
-  <a href="https://sheikh-hussain.onrender.com/" target="_blank">By Sheikh Hussain 💚</a>
+<a href="https://sheikh-hussain.onrender.com/" target="_blank">By Sheikh Hussain 💚</a>
 </div>
 
 ---
